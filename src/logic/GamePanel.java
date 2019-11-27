@@ -4,7 +4,7 @@
  ******************************************************************************/
 package logic;
 /**
- * @author Jiří Čech
+ * @author Matyas Dedek
  * @version 0.1
  */
 import java.awt.Color;

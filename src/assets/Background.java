@@ -4,7 +4,7 @@
  ******************************************************************************/
 package assets;
 /**
- * @author Jiří Čech
+ * @author Matyas Dedek
  * @version 0.1
  */
 public class Background extends Asset {

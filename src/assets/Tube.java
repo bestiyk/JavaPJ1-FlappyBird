@@ -4,12 +4,12 @@
  ******************************************************************************/
 package assets;
 /**
- * @author Jiří Čech
+ * @author Matyas Dedek
  * @version 0.1
  */
 import logic.Run;
 
-public class Tube extends Asset {
+public class Tube extends Asset implements Updatable {
 	
 	private int speed;
 	
@@ -22,30 +22,30 @@ public class Tube extends Asset {
     }
 
     public void reset() {
-        this.width = 66;
-        this.height = 400;
-        this.x = Run.WIDTH + 2;
+        this.setHeight(400);
+        this.setWidth(66);
+        this.setX(Run.WIDTH + 2);
 
-        if (!up) {
-            y = -(int)(Math.random() * 120) - height / 2;
+        if (!isUp()) {
+            this.setY(-(int)(Math.random() * 120) - this.getHeight() / 2);
         }
     }
 
     public void update() {
-        x -= speed;
+        this.setX(this.getX()-this.getSpeed());
     }
 
     public boolean collides(int objX, int objY, int objWidth, int objHeight) {
-
+        //error margin gives makes the collisions smoother and not so extreme for the player
         int errorMargin = 3;
 
-        if (objX + objWidth - errorMargin > x && objX + errorMargin < x + width) {
+        if (objX + objWidth - errorMargin > this.getX() && objX + errorMargin < this.getX() + this.getWidth()) {
 
-        	if (up && objY + objHeight > y) {
+        	if (isUp() && objY + objHeight > this.getY()) {
                 return true;
             }
-        	
-            if (!up && objY < y + height) {
+        	//bottom pipe collides on Y axis
+            if (!isUp() && objY < this.getY() + this.getHeight()) {
                 return true;
             } 
         }

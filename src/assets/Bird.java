@@ -4,12 +4,12 @@
  ******************************************************************************/
 package assets;
 /**
- * @author Jiří Čech
+ * @author Matyas Dedek
  * @version 0.1
  */
 import java.awt.event.KeyEvent;
 
-public class Bird extends Asset {
+public class Bird extends Asset implements Updatable {
 	
 	private double velocity;
 	private double gravity;
@@ -40,15 +40,31 @@ public class Bird extends Asset {
         velocity += gravity;
 
         if (jumpDelay > 0)
-            jumpDelay--;
+        	this.setJumpDelay(this.getJumpDelay()-1);
 
         if (!dead && keyboard.isDown(KeyEvent.VK_SPACE) && jumpDelay <= 0) {
-            velocity = -10;
-            jumpDelay = 10;
+            this.setVelocity(-10);
+            this.setJumpDelay(10);
+
         }
 
         y += (int)velocity;
     }
+
+	@Override
+	public void setSpeed(int speed) {
+
+	}
+
+	@Override
+	public boolean collides(int objX, int objY, int objWidth, int objHeight) {
+		return false;
+	}
+
+	@Override
+	public boolean isUp() {
+		return false;
+	}
 
 	public double getVelocity() {
 		return velocity;

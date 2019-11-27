@@ -4,7 +4,7 @@
  ******************************************************************************/
 package assets;
 /**
- * @author Jiří Čech
+ * @author Matyas Dedek
  * @version 0.1
  */
 import java.awt.event.KeyEvent;
@@ -40,7 +40,7 @@ public class Keyboard implements KeyListener {
 			keys[e.getKeyCode()] = false;
 		}
 	}
-
+	//returns true if a specific key is registered
 	public boolean isDown(int key) {
 
 		if (key >= 0 && key < keys.length) {

@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aec4993f-3702-4617-b408-c544ee327fec" name="Default Changelist" comment="" />
+    <list default="true" id="aec4993f-3702-4617-b408-c544ee327fec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/Updatable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/highScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/score/highScore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Asset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Bird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/Score.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/JavaPJ1-FlappyBird" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UCfbSf1ZgzbSdteFcweVhAFmES" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -22,6 +44,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -96,6 +119,7 @@
       <workItem from="1569747460771" duration="2011000" />
       <workItem from="1571663238265" duration="90000" />
       <workItem from="1574865570124" duration="325000" />
+      <workItem from="1574866106976" duration="4671000" />
     </task>
     <servers />
   </component>
@@ -106,6 +130,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>

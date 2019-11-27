@@ -4,7 +4,7 @@
  ******************************************************************************/
 package player;
 /**
- * @author Jiří Čech
+ * @author Matyas Dedek
  * @version 0.1
  */
 import java.io.File;
