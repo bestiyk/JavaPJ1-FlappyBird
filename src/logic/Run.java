@@ -15,6 +15,7 @@ public class Run {
         JFrame frame = new JFrame("Flappy Bird");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(WIDTH, HEIGHT);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
         Keyboard keyboard = Keyboard.getInstance();

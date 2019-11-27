@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 //handles loading of all assets (images and files)
-public abstract class Asset {
+public abstract class Asset implements Renderable {
 	int x;
 	int y;
 	int width;
@@ -23,10 +23,10 @@ public abstract class Asset {
 	public Asset(String filepath) {
 		this.x = 0;
 		this.y = 0;
-		this.loadImage(filepath);
+		this.loadFile(filepath);
 	}
 	
-	private void loadImage(String filepath) {
+	public void loadFile(String filepath) {
 		
 		try {
 			image = ImageIO.read(new File(filepath));
@@ -36,11 +36,10 @@ public abstract class Asset {
 		    
         }
 	}
-	
-	public Image getImage() {
+
+	public Image getFile() {
 		return image;
 	}
-	
 
 	public int getY() {
 		return y;

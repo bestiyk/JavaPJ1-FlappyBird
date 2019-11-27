@@ -11,10 +11,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.io.File;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JPanel;
 
 import assets.Asset;
+import assets.Sound;
 
 
 public class GamePanel extends JPanel implements Runnable {
@@ -38,7 +42,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2D = (Graphics2D) g;
         for (Asset a : gameLogic.getAssets()) {
-        	g2D.drawImage(a.getImage(), a.getX(), a.getY(), null);
+        	g2D.drawImage(a.getFile(), a.getX(), a.getY(), null);
         }
 
         g2D.setColor(Color.BLACK);

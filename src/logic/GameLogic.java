@@ -19,7 +19,7 @@ public class GameLogic {
     private Boolean paused;
     private Boolean gameover;
     private Boolean started;
-
+    private Sound bgMusic;
     private int pauseDelay;
     private int restartDelay;
     private int tubeDelay;
@@ -43,7 +43,9 @@ public class GameLogic {
         paused = false;
         started = false;
         gameover = false;
-
+        if(bgMusic!=null)
+        bgMusic.stop();
+        bgMusic = new Sound("sound/backgroundMusic.wav");
         score = new Score();
         pauseDelay = 0;
         restartDelay = 0;
@@ -55,7 +57,6 @@ public class GameLogic {
     }
 //check for key presses. update variables if any key fits. Also updates the bird's position. Checks for collisions with tubes and moves tubes closer to the bird.
     public void update() {
-
         isStarted();
 
         if (!started)
@@ -73,8 +74,9 @@ public class GameLogic {
             }
         }
 
-        if (gameover)
+        if (gameover){
             return;
+        }
 
         moveTubes();
         checkForCollisions();
@@ -182,6 +184,8 @@ public class GameLogic {
                     gameover = true;
                     bird.dead = true;
                     score.writeHighScore();
+                    bgMusic.stop();
+                    bgMusic=new Sound("sound/gameOver.wav");
                 } else if (tube.getX() == bird.getX() && !tube.isUp()) {
                     //bird got through the pipes. add 1 score.
                     score.addScore();
@@ -194,6 +198,8 @@ public class GameLogic {
             bird.dead = true;
             bird.setY(Run.HEIGHT - 80 - bird.getHeight());
             score.writeHighScore();
+            bgMusic.stop();
+            bgMusic=new Sound("sound/gameOver.wav");
         }
     }
 
