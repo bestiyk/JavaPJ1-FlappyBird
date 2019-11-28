@@ -48,7 +48,8 @@ public class Score {
 			if (this.score > this.highScore) {
 				try {
 					FileWriter fw = new FileWriter(highScoreFile, false);
-					fw.write(new Integer(this.score).toString());
+					//fw.write(new Integer(this.score).toString());
+					fw.write(Integer.toString(this.score));
 					fw.close();
 					readHighScore();
 				} catch (IOException e) {

@@ -107,7 +107,7 @@ public class GameLogic {
         }
 
         moveTubes();
-        //checkForCollisions();
+        checkForCollisions();
     }
     //loads assets into arraylist and sets assets to object. Also sets the speed of the pipes
     public ArrayList<Asset> getAssets() {
@@ -166,7 +166,9 @@ public class GameLogic {
             for(Updatable tube:updatables){
                 if(tube instanceof Tube){
                     if (tube.getX() - tube.getWidth() < 0) {
+
                         if (upTube == null) {
+                            score.addScore();
                             upTube = (Tube)tube;
                         } else if (downTube == null) {
                             downTube = (Tube)tube;
@@ -215,7 +217,7 @@ public class GameLogic {
                     bgMusic=new Sound("sound/gameOver.wav");
                 } else if (tube.getX() == bird.getX() && !tube.isUp()) {
                     //bird got through the pipes. add 1 score.
-                    score.addScore();
+                   // score.addScore();
                 }
             }
         }
