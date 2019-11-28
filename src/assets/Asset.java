@@ -1,12 +1,12 @@
-/*******************************************************************************
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE.txt', which is part of this source code package.
- ******************************************************************************/
-package assets;
-/**
- * @author Matyas Dedek
- * @version 0.1
+/*
+ * Copyright (c) 2019.
+ * Author Matyas Dedek
+ * Project JavaPJ1-FlappyBird
+ *
  */
+
+package assets;
+
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;

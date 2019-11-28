@@ -1,9 +1,14 @@
-package logic;
-/**
- * @author Matyas Dedek
- * @version 0.1
+/*
+ * Copyright (c) 2019.
+ * Author Matyas Dedek
+ * Project JavaPJ1-FlappyBird
+ *
  */
-import javax.swing.JFrame;
+
+package logic;
+
+import javax.swing.*;
+
 import assets.Keyboard;
 
 public class Run {
@@ -13,6 +18,7 @@ public class Run {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Flappy Bird");
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(WIDTH, HEIGHT);
         frame.setResizable(false);

@@ -1,21 +1,33 @@
+/*
+ * Copyright (c) 2019.
+ * Author Matyas Dedek
+ * Project JavaPJ1-FlappyBird
+ *
+ */
+
 /*******************************************************************************
  * This file is subject to the terms and conditions defined in
  * file 'LICENSE.txt', which is part of this source code package.
  ******************************************************************************/
 package logic;
-/**
- * @author Matyas Dedek
- * @version 0.1
- */
+
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import assets.*;
 import player.Score;
 
 public class GameLogic {
-
-    public static final int TUBE_DELAY = 100;
-
+    //constants
+    public int TUBE_DELAY;
+    private final int TUBE_GAP = 175;
+    private final int GROUND_HEIGHT = 80;
+    private double DIFFICULTY_COEFFICIENT;
+    private final int DEFAULT_TUBE_SPEED = 3;
+    Timer timer;
+    //variables
     private Boolean paused;
     private Boolean gameover;
     private Boolean started;
@@ -23,15 +35,15 @@ public class GameLogic {
     private int pauseDelay;
     private int restartDelay;
     private int tubeDelay;
-
     private Bird bird;
     private Keyboard keyboard;
-
+    public Score score;
+    private long startTime;
+    private int diffSpikeCounter;
+    //collections + arraylists
     private ArrayList<Updatable> updatables;
 
-
-    public Score score;
-    
+    //class methods
     public GameLogic() {
         keyboard = Keyboard.getInstance();
         restart();
@@ -39,18 +51,34 @@ public class GameLogic {
 //restarts the game. Resets boolean variables. Creates new Tubes. Resets the score. Creates new bird instance
     public void restart() {
         updatables = new ArrayList<>();
-
+        DIFFICULTY_COEFFICIENT = 1.2;
+        TUBE_DELAY =100;
         paused = false;
         started = false;
         gameover = false;
+        diffSpikeCounter = 0;
         if(bgMusic!=null)
         bgMusic.stop();
-        bgMusic = new Sound("sound/backgroundMusic.wav");
+        bgMusic = new Sound("sound/backgroundMusic_takeonme.wav");
         score = new Score();
         pauseDelay = 0;
         restartDelay = 0;
         tubeDelay = 0;
-
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(diffSpikeCounter<10) {
+                    DIFFICULTY_COEFFICIENT += 0.1;
+                    diffSpikeCounter++;
+                    TUBE_DELAY -= 5;
+                }
+                if(diffSpikeCounter>=10){
+                    timer.cancel();
+                }
+                if(gameover) timer.cancel();
+            }
+        },10*1000,10*1000);
         bird = new Bird("img/bird.png");
         updatables.add(bird);
 
@@ -79,7 +107,7 @@ public class GameLogic {
         }
 
         moveTubes();
-        checkForCollisions();
+        //checkForCollisions();
     }
     //loads assets into arraylist and sets assets to object. Also sets the speed of the pipes
     public ArrayList<Asset> getAssets() {
@@ -88,7 +116,7 @@ public class GameLogic {
         //set speed for every tube and adds it to assets arraylist
         for(Updatable tube:updatables){
             if(tube instanceof Tube){
-                tube.setSpeed(3);
+                tube.setSpeed((int)(DEFAULT_TUBE_SPEED*DIFFICULTY_COEFFICIENT));
                 assets.add((Tube)tube);
             }
         }
@@ -147,7 +175,6 @@ public class GameLogic {
                     }
                 }
             }
-
             if (upTube == null) {
                 Tube tube = new Tube("img/tubeUp.png", true);
                 updatables.add(tube);
@@ -164,8 +191,8 @@ public class GameLogic {
                 downTube.reset();
             }
 
-            upTube.setY(downTube.getY() + downTube.getHeight() + 175);
-        }
+            upTube.setY(downTube.getY() + downTube.getHeight() + TUBE_GAP);
+       }
 
         for(Updatable tube:updatables){
             if(tube instanceof Tube){
@@ -193,7 +220,7 @@ public class GameLogic {
             }
         }
         //bird touched the floor. game over
-        if (bird.getY() + bird.getHeight() > Run.HEIGHT - 80) {
+        if (bird.getY() + bird.getHeight() > Run.HEIGHT - GROUND_HEIGHT) {
             gameover = true;
             bird.dead = true;
             bird.setY(Run.HEIGHT - 80 - bird.getHeight());
@@ -214,5 +241,6 @@ public class GameLogic {
 	public Boolean getStarted() {
 		return started;
 	}
+	public int getDiffSpikeCounter(){return diffSpikeCounter;}
 	
 }

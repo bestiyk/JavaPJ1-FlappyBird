@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2019.
+ * Author Matyas Dedek
+ * Project JavaPJ1-FlappyBird
+ *
+ */
+
 package assets;
 /*
 * Interface for all updatable game screen elements. This includes tubes and the bird

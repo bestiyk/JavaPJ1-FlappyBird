@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2019.
+ * Author Matyas Dedek
+ * Project JavaPJ1-FlappyBird
+ *
+ */
+
 package assets;
 
 
@@ -47,5 +54,6 @@ public class Sound implements Renderable{
         if(clip.isRunning())
         this.clip.stop();
     }
+    public Clip getClip(){return this.clip;}
 
 }
