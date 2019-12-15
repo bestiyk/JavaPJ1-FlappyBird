@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aec4993f-3702-4617-b408-c544ee327fec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/PJ1_flappybird_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJ1-flappybird/META-INF/PJ1-flappybird.kotlin_module" beforeDir="false" />
-    </list>
+    <list default="true" id="aec4993f-3702-4617-b408-c544ee327fec" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +114,7 @@
       <workItem from="1574865570124" duration="325000" />
       <workItem from="1574866106976" duration="12095000" />
       <workItem from="1574936577842" duration="12822000" />
+      <workItem from="1575472525141" duration="47000" />
     </task>
     <servers />
   </component>
